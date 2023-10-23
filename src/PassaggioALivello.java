@@ -5,8 +5,11 @@ public class PassaggioALivello {
         Treno treno = new Treno(sensore);
         Barriera barriera = new Barriera(sensore);
 
+        ArrestaProgramma arrestaProgramma = new ArrestaProgramma();
+
         treno.start();
         barriera.start();
+        arrestaProgramma.start();
 
     }
 }

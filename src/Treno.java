@@ -11,11 +11,11 @@ public class Treno extends Thread {
         try {
             while (true) {
                 Thread.sleep((int) (Math.random()) * 8000);
-                System.out.println("Il treno sta arrivando.");
+                System.out.println("\nIl treno sta arrivando.");
                 sensoreBarriera.abbassaBarriera();
                 Thread.sleep(3000);
-                sensoreBarriera.alzaBarriera();
                 System.out.println("Il treno è passato.");
+                sensoreBarriera.alzaBarriera();
             }
         } catch (InterruptedException e) {
             System.out.println("Thread Treno è stato interrotto.");

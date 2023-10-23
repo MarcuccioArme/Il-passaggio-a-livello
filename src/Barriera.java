@@ -10,13 +10,12 @@ public class Barriera extends Thread {
     public void run() {
         try {
             while (true) {
-                while (sensoreBarriera.isBarrieraAbbassata()) {
-                    Thread.sleep(1000);
+                if (sensoreBarriera.isBarrieraAbbassata()) {
+                    System.out.println("Barriera abbassata.");
+                    Thread.sleep(3000);
+                    sensoreBarriera.alzaBarriera();
+                    System.out.println("Barriera alzata.");
                 }
-                System.out.println("Barriera abbassata.");
-                Thread.sleep(3000);
-                sensoreBarriera.alzaBarriera();
-                System.out.println("Barriera alzata.");
             }
         } catch (InterruptedException e) {
             System.out.println("Thread Barriera è stato interrotto.");
