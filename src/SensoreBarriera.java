@@ -1,7 +1,17 @@
-public class SensoreBarriera extends Thread {
+public class SensoreBarriera {
 
-    public void run() {
+    private volatile boolean barrieraAbbassata = false;
 
+    public void abbassaBarriera() {
+        barrieraAbbassata = true;
+    }
+
+    public void alzaBarriera() {
+        barrieraAbbassata = false;
+    }
+
+    public boolean isBarrieraAbbassata () {
+        return barrieraAbbassata;
     }
 
 }
