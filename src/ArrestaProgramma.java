@@ -23,7 +23,7 @@ public class ArrestaProgramma extends Thread {
             System.out.println("Programma arrestato.");
             System.exit(0); // Chiudi il programma
         } catch (IOException e) {
-            System.out.println("Errore durante l'arresto del programma: ");
+            System.out.println("Errore durante l'arresto del programma.");
         }
     }
 
