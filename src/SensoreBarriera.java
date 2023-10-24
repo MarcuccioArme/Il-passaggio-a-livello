@@ -52,7 +52,7 @@ public class SensoreBarriera extends Thread {
 
 /*
 
-Il treno passa in un momento casuale dal passaggio a livello.
+Il treno passa dal passaggio a livello in un momento casuale.
 
 Quando questo è in arrivo, il sensore lo rileva e fa abbassare la barriera.
 
