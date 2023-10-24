@@ -23,7 +23,7 @@ public class Treno extends Thread {
                 sensoreBarriera.TrenoPassato();
                 System.out.println("Il Treno è passato.");
 
-                // Attendi che la barriera si rialzi
+                // Attendo che la barriera si rialzi
                 while (barriera.isBarrieraAbbassata()) {
                     Thread.sleep(1000);
                 }
