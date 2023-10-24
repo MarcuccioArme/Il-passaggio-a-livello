@@ -1,14 +1,14 @@
 public class PassaggioALivello {
     public static void main(String[] args) {
 
-        SensoreBarriera sensore = new SensoreBarriera();
-        Treno treno = new Treno(sensore);
-        Barriera barriera = new Barriera(sensore);
+        Barriera barriera = new Barriera();
+        SensoreBarriera sensoreBarriera = new SensoreBarriera(barriera);
+        Treno treno = new Treno(barriera, sensoreBarriera);
 
         ArrestaProgramma arrestaProgramma = new ArrestaProgramma();
 
+        sensoreBarriera.start();
         treno.start();
-        barriera.start();
         arrestaProgramma.start();
 
     }

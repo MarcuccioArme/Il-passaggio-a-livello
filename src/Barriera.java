@@ -1,25 +1,17 @@
-public class Barriera extends Thread {
+public class Barriera {
 
-    private final SensoreBarriera sensoreBarriera;
+    private volatile boolean barrieraAbbassata = false;
 
-    public Barriera(SensoreBarriera sensoreBarriera) {
-        this.sensoreBarriera = sensoreBarriera;
+    public void abbassaBarriera() {
+        barrieraAbbassata = true;
     }
 
-    @Override
-    public void run() {
-        try {
-            while (true) {
-                if (sensoreBarriera.isBarrieraAbbassata()) {
-                    System.out.println("Barriera abbassata.");
-                    Thread.sleep(3000);
-                    sensoreBarriera.alzaBarriera();
-                    System.out.println("Barriera alzata.");
-                }
-            }
-        } catch (InterruptedException e) {
-            System.out.println("Thread Barriera è stato interrotto.");
-        }
+    public void alzaBarriera() {
+        barrieraAbbassata = false;
+    }
+
+    public boolean isBarrieraAbbassata () {
+        return barrieraAbbassata;
     }
 
 }
