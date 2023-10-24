@@ -43,7 +43,7 @@ public class SensoreBarriera extends Thread {
                 barriera.alzaBarriera();
                 System.out.println("Barriera rialzata e semaforo verde acceso.");
             } catch (InterruptedException e) {
-                System.out.println("Thread Barriera è stato interrotto.");
+                System.out.println("Thread SensoreBarriera è stato interrotto.");
             }
         }
     }
