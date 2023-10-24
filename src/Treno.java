@@ -10,8 +10,8 @@ public class Treno extends Thread {
 
     @Override
     public void run() {
-        try {
-            while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
                 // La barriera si abbassa
                 while (!barriera.isBarrieraAbbassata()) {
                     Thread.sleep(1000);
@@ -27,9 +27,9 @@ public class Treno extends Thread {
                 while (barriera.isBarrieraAbbassata()) {
                     Thread.sleep(1000);
                 }
+            } catch (InterruptedException e) {
+                System.out.println("Thread Treno è stato interrotto.");
             }
-        } catch (InterruptedException e) {
-            System.out.println("Thread Barriera è stato interrotto.");
         }
     }
 

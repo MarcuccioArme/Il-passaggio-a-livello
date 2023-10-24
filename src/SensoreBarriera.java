@@ -22,8 +22,8 @@ public class SensoreBarriera extends Thread {
 
     @Override
     public void run() {
-        try {
-            while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
                 // Il treno passa in un momento casuale
                 Thread.sleep((long) (Math.random() * 5000));
 
@@ -42,9 +42,9 @@ public class SensoreBarriera extends Thread {
                 // Rialza la barriera
                 barriera.alzaBarriera();
                 System.out.println("Barriera rialzata e semaforo verde acceso.");
+            } catch (InterruptedException e) {
+                System.out.println("Thread Barriera è stato interrotto.");
             }
-        } catch (InterruptedException e) {
-            System.out.println("Thread Treno è stato interrotto.");
         }
     }
 

@@ -5,7 +5,7 @@ public class PassaggioALivello {
         SensoreBarriera sensoreBarriera = new SensoreBarriera(barriera);
         Treno treno = new Treno(barriera, sensoreBarriera);
 
-        ArrestaProgramma arrestaProgramma = new ArrestaProgramma();
+        ArrestaProgramma arrestaProgramma = new ArrestaProgramma(sensoreBarriera, treno);
 
         sensoreBarriera.start();
         treno.start();
