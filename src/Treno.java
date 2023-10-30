@@ -14,7 +14,7 @@ public class Treno extends Thread {
             try {
                 // La barriera si abbassa
                 while (!barriera.isBarrieraAbbassata()) {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 }
 
                 // Il treno passa
@@ -25,7 +25,7 @@ public class Treno extends Thread {
 
                 // Attendo che la barriera si rialzi
                 while (barriera.isBarrieraAbbassata()) {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 }
             } catch (InterruptedException e) {
                 System.out.println("Thread Treno è stato interrotto.");

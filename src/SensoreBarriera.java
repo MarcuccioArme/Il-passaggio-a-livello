@@ -36,7 +36,7 @@ public class SensoreBarriera extends Thread {
 
                 // Attende che il treno passi
                 while (isTrenoInTransito()) {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 }
 
                 // Rialza la barriera
